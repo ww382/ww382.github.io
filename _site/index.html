@@ -20,7 +20,7 @@
   <!-- Header -->
   <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
     <div class="container-fluid p-0">
-      
+
         <div class="row ml-1 ml-sm-0">
           <span class="contact-icon text-center" style="line-height: 1em;">
             <a href="mailto:ww382@cornell.edu"><i class="fa fa-envelope-square gm-icon"></i></a>
@@ -32,7 +32,7 @@
           -->
           </span>
         </div>
-      
+
       <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,54 +41,54 @@
           <li class="nav-item navbar-active font-weight-bold">
             <a class="nav-link" href="/">
               about
-              
+
                 <span class="sr-only">(current)</span>
-              
+
             </a>
           </li>
-          
-            
-          
-            
+
+
+
+
               <li class="nav-item ">
                   <a class="nav-link" href="/cv/">
                     cv
-                    
+
                   </a>
               </li>
-            
-          
-            
-          <!--
-            
+
+
+
+
+
               <li class="nav-item ">
                   <a class="nav-link" href="/projects/">
                     projects
-                    
+
                   </a>
               </li>
-            
-          
-            
+
+       <!--    
+
               <li class="nav-item ">
                   <a class="nav-link" href="/publications/">
                     publications
-                    
+
                   </a>
               </li>
-            
-          
-            
+
+
+
               <li class="nav-item ">
                   <a class="nav-link" href="/teaching/">
                     teaching
-                    
+
                   </a>
               </li>
             -->
-          
-            
-          
+
+
+
         </ul>
       </div>
     </div>
@@ -103,7 +103,7 @@
 
   <!-- Content -->
   <div class="content">
-    
+
 
 <div class="text-center mt-5">
   <img class="profile-img" src="/assets/img/prof_pic.jpg" />
@@ -150,8 +150,8 @@
           </p>
         </div>
       </div>
-  
-  
+
+
     <div class="row p-0">
       <div class="col-sm-2 p-0">
         <span class="badge danger-color-dark font-weight-bold text-uppercase align-middle date ml-3">
@@ -163,7 +163,7 @@
 </p>
       </div>
     </div>
-  
+
     <div class="row p-0">
       <div class="col-sm-2 p-0">
         <span class="badge danger-color-dark font-weight-bold text-uppercase align-middle date ml-3">
@@ -175,7 +175,7 @@
         <p>Presentation title: <b>Tightly Coupled, Partitioned Fluid-Structure Interaction Analysis of a Flat Plate Slamming onto a Water Free Surface: Computational Framework and Validation</b>.
       </div>
     </div>
-  
+
     <div class="row p-0">
       <div class="col-sm-2 p-0">
         <span class="badge danger-color-dark font-weight-bold text-uppercase align-middle date ml-3">
@@ -187,7 +187,7 @@
         <p>Presentation title: <b>Implicit Partitioned Fluid-Structure Interaction Modeling Framework for Naval Applications: The Impact of Slamming Loads on High Speed Watercrafts</b>.
       </div>
     </div>
-  
+
   <div class="row p-0">
     <div class="col-sm-2 p-0">
       <span class="badge danger-color-dark font-weight-bold text-uppercase align-middle date ml-3">
@@ -199,7 +199,7 @@
       </p>
     </div>
   </div>
-  
+
     <div class="row p-0">
       <div class="col-sm-2 p-0">
         <span class="badge danger-color-dark font-weight-bold text-uppercase align-middle date ml-3">
@@ -212,7 +212,7 @@
 </p>
       </div>
     </div>
-  
+
 </div>
 
   </div>
@@ -220,7 +220,7 @@
   <!-- Footer -->
   <footer>
     &copy; Copyright 2020 Wensi Wu.
-    
+
   </footer>
 
   <!-- Core JavaScript Files -->
@@ -236,27 +236,27 @@
   <!-- GitHub Stars -->
   <script src="/assets/js/github-stars.js"></script>
   <script type="text/javascript">
-    
-        
+
+
         githubStars("eaplatanios/symphony-mt", function(stars) { $("#curriculum-learningeaplatanios-symphony-mt-stars").text('' + stars); });
-      
+
         githubStars("eaplatanios/jelly-bean-world", function(stars) { $("#jelly-bean-worldeaplatanios-jelly-bean-world-stars").text('' + stars); });
-      
-    
-      
-        
+
+
+
+
         githubStars("eaplatanios/symphony-mt", function(stars) { $("#machine-translationeaplatanios-symphony-mt-stars").text('' + stars); });
-      
-    
-      
-    
-      
-    
-      
-        
+
+
+
+
+
+
+
+
         githubStars("eaplatanios/tensorflow_scala", function(stars) { $("#TensorFlow-Scalaeaplatanios-tensorflow_scala-stars").text('' + stars); });
-      
-    
+
+
   </script>
 
   <!-- Scrolling Progress Bar -->
@@ -268,13 +268,13 @@
       var progressBar = $('#progress');
       progressBar.css({ 'top': navbarHeight });
       var getMax = function() { return $(document).height() - $(window).height(); }
-      var getValue = function() { return $(window).scrollTop(); }   
+      var getValue = function() { return $(window).scrollTop(); }
       // Check if the browser supports the progress element.
       if ('max' in document.createElement('progress')) {
         // Set the 'max' attribute for the first time.
         progressBar.attr({ max: getMax() });
         progressBar.attr({ value: getValue() });
-    
+
         $(document).on('scroll', function() {
           // On scroll only the 'value' attribute needs to be calculated.
           progressBar.attr({ value: getValue() });

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/academicons.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/video.css">
   <link rel="canonical" href="/projects/combustion_model/">
 </head>
 <body>
@@ -104,19 +106,90 @@
 <div class="row m-0" style="width: 100%;">
   <div class="col-sm-12 p-0">
     <h1>Combusion Model</h1>
-    <h5 class="mb-4">active learning amidst logical knowledge</h5>
+    <h5 class="mb-4">A reactive flow model</h5>
   </div>
-  <!-- <div class="col-sm-2 p-0 mt-auto mb-auto">
-    <img src="/assets/img/active_learning/active_learning_logo.svg" alt="project thumbnail">
-  </div> -->
+</div>
+
+<div class="container-fluid p-0">
+  <img class="img-responsive col-12" src="/assets/img/projects/combustion_model/ReInf_FLAME.png" alt="overview figure" />
+  <h6 class="font-italic text-center" style="color: #78909c;"><u>Figure 1:</u> Temperature contour with \( Re=\infty \) at the end of the simulation time (\(\frac{tU}{H} = 90 \)). </h6>
 </div>
 
 <div class="container-fluid p-0 text-justify">
+In this project, a simple premixed combusion numerical model is implemented in addtion to our Navier-Stoke solver to observe the interaction of liquid atomization and spray vaporization in a heat combustion process as the fuel consumed by the flame. A reactive flow in an augmentor with a mixture of fuel and oxidizer flows in the turbine exit channel is modelled. A box is used as a flame-holder to create a low-speed region to stablized the flame.
+
+<div class="col mt-4 p-0">
+The combustion model is described by the following equations:
+$$ \frac{\partial \phi}{\partial t} + \nabla \cdot \left( u \phi \right) = \mathcal{D} \nabla^2\phi + \dot{\omega_{\phi}} $$
+and
+$$ \frac{\partial T}{\partial t} + \nabla \cdot \left( u T \right) = \mathcal{D} \nabla^2\phi + \dot{\omega_{T}}. $$
+where \( \phi \) represents the amount of combustible material avaliable and \( T \) represents the temperature.
+
+In these, the combustion source terms are taken to be
+$$ \dot{\omega_{\phi}} =-\dot{\omega} $$
+and
+$$ \dot{\omega_{T}} =A\dot{\omega} $$
+where we consider the following Arrhenius reaction
+$$ \dot{\omega}= \phi \left( \frac{T}{T_b} \right)^3 e^{\frac{- T_a}{T}}. $$
+In the above expressions, \(\mathcal{D}=10^{-4}\), \(A=1000\), \(T_a = 1500\), and \(T_b = 1000\). As initial conditions, we have an \(H \times H\) region behind the square obstruction where \(T=2500\).
+</div>
+
+<div class="col mt-4 p-0">
+The viscous term in the Navier-Stoke is solved implicitly through the Crank-Nicolson scheme with alternating direction implicit (ADI) method. The combustion equations are solved using second order accuracy in time ( \( \textit i.e. \) Adams-Bashforth for convection and Crank-Nicolson with ADI for diffusion), second order central differencing in space for the diffusion term, and third order QUICK for the spatial discretization of the convective term.
+The convergence criterion for the simulations is set to \(\epsilon = 10^{-10}\) with maximum subiteration \(iter_{max} = 1000\). The total simulation run time is \(\frac{tU}{H} = 100 \).
+</div>
+
+<h4 class="title mt-4 p-0 text-left">Simulation results: </h4>
+
+<div class="container-fluid p-0">
+
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1lP6YNyHUnQggVG5YeOYKhZWwmgxvhrzE/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <h6 class="font-italic text-center" style="color: #78909c;"><u>Video 1:</u> Temperature contour with \( Re=1000 \). </h6>
+</div>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1Rbs64k4vJsHqU2y1aNbRzmmqv5zg5JzG/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <h6 class="font-italic text-center" style="color: #78909c;"><u>Video 2:</u> Velocity contour with \( Re=1000 \). </h6>
+</div>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1GhdqhLyVzAYS_H-eaz1aap0zN_4oVKSi/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <h6 class="font-italic text-center" style="color: #78909c;"><u>Video 3:</u> Temperature contour with \( Re=\infty \). </h6>
+</div>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1VgVhcyFKy8a0tkNkhjRxn9luRFi2k6IU/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <h6 class="font-italic text-center" style="color: #78909c;"><u>Video 4:</u> Velocity contour with \( Re=\infty \). </h6>
+</div>
 
 
 </div>
 
-  </div>
+</div>
 
   <!-- Footer -->
   <footer>
@@ -134,13 +207,6 @@
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
   <script src="/assets/js/common.js"></script>
-
-  <!-- GitHub Stars -->
-  <script src="/assets/js/github-stars.js"></script>
-  <script type="text/javascript">
-
-
-  </script>
 
   <!-- Scrolling Progress Bar -->
   <script type="text/javascript">

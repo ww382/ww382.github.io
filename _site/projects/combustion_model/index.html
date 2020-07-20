@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Wensi Wu | projects</title>
+  <title>Wensi Wu| Combustion model </title>
   <meta name="description" content="Personal website of Wensi Wu.">
 
   <!-- Fonts and Icons -->
@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/academicons.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="/projects/">
+  <link rel="stylesheet" href="/assets/css/video.css">
+  <link rel="canonical" href="/projects/combustion_model/">
 </head>
 <body>
   <!-- Header -->
@@ -58,7 +59,7 @@
                   </a>
               </li>
 
-          <!--
+<!--
 
               <li class="nav-item ">
                   <a class="nav-link" href="/publications/">
@@ -76,7 +77,7 @@
                   </a>
               </li>
 
-          -->
+-->
 
 
         </ul>
@@ -93,49 +94,101 @@
 
   <!-- Content -->
   <div class="content">
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb p-0 text-lowercase">
+    <li class="breadcrumb-item"><a href="/">home</a></li>
+    <li class="breadcrumb-item"><a href="/projects">projects</a></li>
+    <li class="breadcrumb-item active">Combustion model</li>
+  </ol>
+</nav>
 
-  <h1>projects</h1>
-  <h6>some of the projects I have worked on</h6>
+<div class="row m-0" style="width: 100%;">
+  <div class="col-sm-12 p-0">
+    <h1>Combusion Model</h1>
+    <h5 class="mb-4">A reactive flow model</h5>
+  </div>
+</div>
 
+<div class="container-fluid p-0">
+  <img class="img-responsive col-12" src="/assets/img/projects/combustion_model/ReInf_FLAME.png" alt="overview figure" />
+  <h6 class="font-italic text-center" style="color: #78909c;"><u>Figure 1:</u> Temperature contour with \( Re=\infty \) at the end of the simulation time (\(\frac{tU}{H} = 90 \)). </h6>
+</div>
 
-<div id="projects" class="row mt-2 pt-3" style="overflow: visible !important;">
+<div class="container-fluid p-0 text-justify">
+In this project, a simple premixed combusion numerical model is implemented in addtion to our Navier-Stoke solver to observe the interaction of liquid atomization and spray vaporization in a heat combustion process as the fuel consumed by the flame. A reactive flow in an augmentor with a mixture of fuel and oxidizer flows in the turbine exit channel is modelled. A box is used as a flame-holder to create a low-speed region to stablized the flame.
 
+<div class="col mt-4 p-0">
+The combustion model is described by the following equations:
+$$ \frac{\partial \phi}{\partial t} + \nabla \cdot \left( u \phi \right) = \mathcal{D} \nabla^2\phi + \dot{\omega_{\phi}} $$
+and
+$$ \frac{\partial T}{\partial t} + \nabla \cdot \left( u T \right) = \mathcal{D} \nabla^2\phi + \dot{\omega_{T}}. $$
+where \( \phi \) represents the amount of combustible material avaliable and \( T \) represents the temperature.
 
-    <div class="project-card">
+In these, the combustion source terms are taken to be
+$$ \dot{\omega_{\phi}} =-\dot{\omega} $$
+and
+$$ \dot{\omega_{T}} =A\dot{\omega} $$
+where we consider the following Arrhenius reaction
+$$ \dot{\omega}= \phi \left( \frac{T}{T_b} \right)^3 e^{\frac{- T_a}{T}}. $$
+In the above expressions, \(\mathcal{D}=10^{-4}\), \(A=1000\), \(T_a = 1500\), and \(T_b = 1000\). As initial conditions, we have an \(H \times H\) region behind the square obstruction where \(T=2500\).
+</div>
 
-        <a href="/projects/combustion_model/">
+<div class="col mt-4 p-0">
+The viscous term in the Navier-Stoke is solved implicitly through the Crank-Nicolson scheme with alternating direction implicit (ADI) method. The combustion equations are solved using second order accuracy in time ( \( \textit i.e. \) Adams-Bashforth for convection and Crank-Nicolson with ADI for diffusion), second order central differencing in space for the diffusion term, and third order QUICK for the spatial discretization of the convective term.
+The convergence criterion for the simulations is set to \(\epsilon = 10^{-10}\) with maximum subiteration \(iter_{max} = 1000\). The total simulation run time is \(\frac{tU}{H} = 100 \).
+</div>
 
-        <div class="card">
-          <img class="card-img-top" src="/assets/img/projects/combustion_model/ReInf_FLAME.png" alt="project thumbnail" />
-          <div class="card-body">
-            <h5 class="card-title text-lowercase">Combustion model</h5>
-            <p class="card-text">A reactive flow model</p>
-            <div class="row ml-1 mr-1 p-0">
+<h4 class="title mt-4 p-0 text-left">Simulation results: </h4>
 
-              <!--
-                <div class="github-icon">
-                  <div class="icon" data-toggle="tooltip" title="Code Repository">
-                    <a href="https://github.com/eaplatanios/symphony-mt" target="_blank"><i class="fab fa-github gh-icon"></i></a>
-                  </div>
-                  <span class="stars" data-toggle="tooltip" title="GitHub Stars">
-                    <i class="fas fa-star"></i>
-                    <span id="machine-translationeaplatanios-symphony-mt-stars"></span>
-                  </span>
+<div class="container-fluid p-0">
 
-                </div>
-              -->
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1lP6YNyHUnQggVG5YeOYKhZWwmgxvhrzE/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <h6 class="font-italic text-center" style="color: #78909c;"><u>Video 1:</u> Temperature contour with \( Re=1000 \). </h6>
+</div>
 
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1Rbs64k4vJsHqU2y1aNbRzmmqv5zg5JzG/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <h6 class="font-italic text-center" style="color: #78909c;"><u>Video 2:</u> Velocity contour with \( Re=1000 \). </h6>
+</div>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1GhdqhLyVzAYS_H-eaz1aap0zN_4oVKSi/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <h6 class="font-italic text-center" style="color: #78909c;"><u>Video 3:</u> Temperature contour with \( Re=\infty \). </h6>
+</div>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1VgVhcyFKy8a0tkNkhjRxn9luRFi2k6IU/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <h6 class="font-italic text-center" style="color: #78909c;"><u>Video 4:</u> Velocity contour with \( Re=\infty \). </h6>
+</div>
 
 
 </div>
 
-
-  </div>
+</div>
 
   <!-- Footer -->
   <footer>

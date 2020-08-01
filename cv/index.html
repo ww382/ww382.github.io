@@ -8,7 +8,7 @@
                 <meta name="description" content="Personal website of Wensi Wu.">
 
                     <!-- Fonts and Icons -->
-                    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons" />
+                      <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
 
                     <!-- CSS Files -->
                     <link rel="stylesheet" href="/assets/css/all.min.css">
@@ -29,8 +29,8 @@
                 <div class="collapse navbar-collapse text-right" id="navbarNav">
                     <ul class="navbar-nav ml-auto flex-nowrap">
                         <li class="nav-item ">
-                            <a class="nav-link" href="/">
-                                about
+                            <a class="nav-link" href="/about_me/">
+                                about me
 
                             </a>
                         </li>
@@ -84,31 +84,37 @@
             </div>
         </nav>
 
-        <!-- Scrolling Progress Bar -->
+        <!-- Scrolling Progress Bar
         <progress id="progress" value="0">
             <div class="progress-container">
                 <span class="progress-bar"></span>
             </div>
         </progress>
-
+       -->
         <!-- Content -->
         <div class="content">
 
-            <h1>cv</h1>
-            <h6></h6>
+            <h4 style="letter-spacing: .1rem">Curriculum Vitae
+              <!-- Place PDF download link at the top right. -->
+                <a class="ml-2" href="/assets/pdf/wensi_cv.pdf" target="_blank">
+                  <img height="50px" src="/assets/img/pdf_icon.svg" />
+                </a>
+            </h4>
+            <h7></h7>
 
 
-            <!-- Place PDF download link at the top right. -->
-            <div class="row" style="margin-top: -3.5em;">
+            <!-- Place PDF download link at the top right.
+            <div class="row" style="margin-top: -5em;">
                 <a class="ml-auto mr-2" href="/assets/pdf/wensi_cv.pdf" target="_blank">
-                    <img height="60px" src="/assets/img/pdf_icon.svg" />
+                    <img height="40px" src="/assets/img/pdf_icon.svg" />
                 </a>
             </div>
+            -->
 
             <div class="cv">
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">General Information</h3>
+                    <h6 class="card-title">General Information</h6>
                     <div>
 
                         <table class="table table-sm table-borderless">
@@ -139,12 +145,12 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Research Areas</h3>
+                    <h6 class="card-title">Research Areas</h6>
                     <div>
 
                         <ul class="card-text font-weight-light list-group list-group-flush">
 
-                            <li class="list-group-item">
+                            <li class="list-group-item" style="font-size: 1rem">
                                 Computational structural dynamics, computational fluid dynamics, multiphysics multiphase problem, fluid-structure interaction
                                  </li>
                         </ul>
@@ -153,7 +159,7 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Education</h3>
+                    <h6 class="card-title">Education</h6>
                     <div>
 
                         <ul class="card-text font-weight-light list-group list-group-flush">
@@ -161,22 +167,24 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-3 cl-sm-3 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal-normal font-weight-bold text-uppercase align-middle" style="width: 125px;">
                                             2018-now
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">Cornell University – Ph.D. in Structural Mechanics, minor in Computational Mechanics</h6>
+                                        <h7 class="font-weight-bold">Cornell University – Ph.D. in Structural Mechanics</h7>
 
 
                                         <ul class="items">
 
                                             <li>
-
-                                                <span class="item"><u>Advisor:</u> <a href="https://earls.cee.cornell.edu/" target="_blank"><b> Prof. Chris Earls</b></a></span>
+                                                <span class="item">minor in Computational Mechanics </span>
+                                            </li>
+                                            <li>
+                                                <span class="item"><u>Advisor:</u> <a href="https://earls.cee.cornell.edu/" target="_blank"><b> Dr. Chris Earls</b></a></span>
 
                                             </li>
                                         </ul>
@@ -187,22 +195,22 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold text-uppercase align-middle" style="width: 125px;">
                                             2015-18
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">Cornell University – M.S. in Structural Mechanics</h6>
+                                        <h7 class="title font-weight-bold">Cornell University – M.S. in Structural Mechanics</h7>
 
 
                                         <ul class="items">
 
                                             <li>
 
-                                                <span class="item"><u>Advisor:</u> <a href="https://earls.cee.cornell.edu/" target="_blank"><b> Prof. Chris Earls</b></a></span>
+                                                <span class="item"><u>Advisor:</u> <a href="https://earls.cee.cornell.edu/" target="_blank"><b> Dr. Chris Earls</b></a></span>
 
                                             </li>
 
@@ -216,15 +224,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold text-uppercase align-middle" style="width: 125px;">
                                             2011-15
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">Cornell University – B.S. in Civil Engineering</h6>
+                                        <h7 class="title font-weight-bold">Cornell University – B.S. in Civil Engineering</h7>
 
 
                                         <ul class="items">
@@ -248,7 +256,7 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Research Experience</h3>
+                    <h6 class="card-title">Research Experience</h6>
                     <div>
 
                         <ul class="card-text font-weight-light list-group list-group-flush">
@@ -256,15 +264,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2015-Now
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">Graduate Research Assistant at Cornell University</h6>
+                                        <h7 class="title font-weight-bold">Graduate Research Assistant at Cornell University</h7>
 
 
                                         <ul class="items">
@@ -322,15 +330,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2017
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">Visiting Researcher at Sandia National Labortaries</h6>
+                                        <h7 class="title font-weight-bold">Visiting Researcher at Sandia National Labortaries</h7>
 
 
                                         <ul class="items">
@@ -362,15 +370,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2015
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">Undergraduate Research Assistant at Cornell University</h6>
+                                        <h7 class="title font-weight-bold" >Undergraduate Research Assistant at Cornell University</h7>
 
 
                                         <ul class="items">
@@ -401,15 +409,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2014
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">REU fellow at Duke University</h6>
+                                        <h7 class="title font-weight-bold">REU fellow at Duke University</h7>
 
 
                                         <ul class="items">
@@ -445,15 +453,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2013
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">REU fellow at University of Cincinnati</h6>
+                                        <h7 class="title font-weight-bold">REU fellow at University of Cincinnati</h7>
 
 
                                         <ul class="items">
@@ -493,7 +501,7 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Open Source Projects</h3>
+                    <h6 class="card-title">Open Source Projects</h6>
                     <div>
 
                         <ul class="card-text font-weight-light list-group list-group-flush">
@@ -501,15 +509,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2015-now
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><a href="https://github.com/nonlinearfun/CU-BENs/releases/tag/v4.1.2" target="_blank"><b>CU-BENs</b></a></h6>
+                                        <h7 class="title font-weight-bold"><a href="https://github.com/nonlinearfun/CU-BENs/releases/tag/v4.1.2" target="_blank"><b>CU-BENs</b></a></h7>
 
 
                                         <ul class="items">
@@ -531,7 +539,7 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Honors and Awards</h3>
+                    <h6 class="card-title">Honors and Awards</h6>
                     <div>
 
                         <ul class="card-text font-weight-light list-group list-group-flush">
@@ -539,10 +547,10 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2015
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
@@ -566,10 +574,10 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2013
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
@@ -595,7 +603,7 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Teaching Experience</h3>
+                    <h6 class="card-title">Teaching Experience</h6>
                     <div>
 
                         <ul class="card-text font-weight-light list-group list-group-flush">
@@ -603,15 +611,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold text-uppercase align-middle" style="width: 125px;">
                                             2019
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><b>Teaching Assisant for an upperclassment course: Introduction to The Behavior of Metal Structures at Cornell University</b></h6>
+                                        <h7 class="title font-weight-bold"><b>Teaching Assisant for an upperclassment course: Introduction to The Behavior of Metal Structures at Cornell University</b></h7>
                                     </div>
                                 </div>
                             </li>
@@ -619,30 +627,30 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2018
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><b>Teaching Assistant for an upperclassment course: Structural Dynamics and Earthquake Engineering at Cornell University</b></h6>
+                                        <h7 class="title font-weight-bold"><b>Teaching Assistant for an upperclassment course: Structural Dynamics and Earthquake Engineering at Cornell University</b></h7>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
-                                            2012-2013
-                                        </span>
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
+                                            2012-13
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><b>Academic Excellence Workshops Facilitator for undergraduate-level courses: Calculus I and Calculus II</b></h6>
+                                        <h7 class="title font-weight-bold"><b>Academic Excellence Workshops Facilitator for undergraduate-level courses: Calculus I and Calculus II</b></h7>
                                     </div>
                                 </div>
                             </li>
@@ -653,17 +661,16 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Professional Memberships</h3>
-                    <div>
+                    <h6 class="card-title">Professional Memberships</h6>
 
+                    <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0 ml-4 pl-4">
                         <ul class="card-text font-weight-light list-group list-group-flush">
-
-                            <li class="list-group-item">
-                                <h6 class="font-italic">United States Association for Computational Mechanics (USACM)</h6>
-                                <h6 class="font-italic">International Association on Computational Mechanics (IACM)</h6>
-                                <h6 class="font-italic">Tau Beta Pi National Engineering Honor Society</h6>
-                                <h6 class="font-italic">Chi Epsilon National Engineering Honor Society</h6>
-                                <h6 class="font-italic">American Society of Civil Engineers (ASCE)</h6>
+                            <li class="list-group-item pl-5 ml-md-5">
+                                <span>United States Association for Computational Mechanics (USACM)</span> <br />
+                                <span>International Association on Computational Mechanics (IACM)</span> <br />
+                                <span>Tau Beta Pi National Engineering Honor Society</span> <br />
+                                <span>Chi Epsilon National Engineering Honor Society</span> <br />
+                                <span>American Society of Civil Engineers (ASCE)</span> <br />
                             </li>
                         </ul>
 
@@ -671,7 +678,7 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Conference Presentations</h3>
+                    <h6 class="card-title">Conference Presentations</h6>
                     <div>
 
                         <ul class="card-text font-weight-light list-group list-group-flush">
@@ -679,17 +686,17 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2019
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><i>Tightly Coupled, Partitioned Fluid-Structure Interaction
+                                        <h7 class="title font-weight-bold ">Tightly Coupled, Partitioned Fluid-Structure Interaction
                                             Analysis of a Horizontal Plate Impact onto a Water Free Surface: Computational Framework
-                                            and Validation</i></h6>
+                                            and Validation</h7>
 
 
                                         <ul class="items">
@@ -710,17 +717,17 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2018
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><i>Open Source, Tightly Coupled, Partitioned Fluid-Structure
+                                        <h7 class="title font-weight-bold ">Open Source, Tightly Coupled, Partitioned Fluid-Structure
                                             Interaction Modeling Framework for Naval Applications: The Impact of Slamming Loads
-                                            on High Speed Watercraft</i></h6>
+                                            on High Speed Watercraft</h7>
 
 
                                         <ul class="items">
@@ -740,16 +747,16 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2018
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><i>Interface Reduction
-                                            on Hurty/Craig-Bampton Substructures with Frictionless Contact</i></h6>
+                                        <h7 class="title font-weight-bold ">Interface Reduction
+                                            on Hurty/Craig-Bampton Substructures with Frictionless Contact</h7>
                                         <ul class="items">
 
                                             <li>
@@ -762,17 +769,17 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2017
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><i>Open Source, Tightly Coupled, Partitoned
+                                        <h7 class="title font-weight-bold ">Open Source, Tightly Coupled, Partitoned
                                             Fluid-Structure Interaction Simulation Capability for High Spatiotemporal Resolution During
-                                            Study of Wave Impact Loads in High Speed Watercrafts</i></h6>
+                                            Study of Wave Impact Loads in High Speed Watercrafts</h7>
 
 
                                         <ul class="items">
@@ -792,16 +799,16 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2017
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><i>Condition Assessment and Prognosis using
-                                            Fluid-Structure Interaction within a Reduced-Order Model Tracking Inversion Framework</i></h6>
+                                        <h7 class="title font-weight-bold ">Condition Assessment and Prognosis using
+                                            Fluid-Structure Interaction within a Reduced-Order Model Tracking Inversion Framework</h7>
 
 
                                         <ul class="items">
@@ -823,7 +830,7 @@
                     </div>
                 </div>
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Leadership Experience</h3>
+                    <h6 class="card-title">Leadership Experience</h6>
                     <div>
 
                         <ul class="card-text font-weight-light list-group list-group-flush">
@@ -831,15 +838,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2020-now
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><b> Cornell University CEE Graduate Student Association</b></h6>
+                                        <h7 class="title font-weight-bold "><b> Cornell University CEE Graduate Student Association</b></h7>
 
 
                                         <ul class="items">
@@ -857,15 +864,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2019-20
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">Cornell University Sport Taekwondo Student Club</h6>
+                                        <h7 class="title font-weight-bold ">Cornell University Sport Taekwondo Student Club</h7>
 
 
                                         <ul class="items">
@@ -885,15 +892,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2018-19
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4">Cornell University Engineering Teaching Assistant Development Program</h6>
+                                        <h7 class="title font-weight-bold ">Cornell University Engineering Teaching Assistant Development Program</h7>
 
 
                                         <ul class="items">
@@ -914,15 +921,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2016-17
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><b> Cornell University CEE Graduate Student Association</b></h6>
+                                        <h7 class="title font-weight-bold "><b> Cornell University CEE Graduate Student Association</b></h7>
 
 
                                         <ul class="items">
@@ -939,15 +946,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2014-15
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><b> Chi Epsilon National Civil Engineering Honor Society</b></h6>
+                                        <h7 class="title font-weight-bold "><b> Chi Epsilon National Civil Engineering Honor Society</b></h7>
 
 
                                         <ul class="items">
@@ -964,15 +971,15 @@
                             <li class="list-group-item">
                                 <div class="row">
 
-                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-left" style="width: 75px;">
-                                        <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="width: 75px;">
+                                    <div class="col-xs-2 cl-sm-2 col-md-auto text-center" style="width: 125px;">
+                                        <time class="badge-normal font-weight-bold  text-uppercase align-middle" style="width: 125px;">
                                             2013-14
-                                        </span>
+                                        </time>
                                     </div>
 
                                     <div class="col-xs-10 cl-sm-10 col-md mt-2 mt-md-0">
 
-                                        <h6 class="title font-weight-bold ml-1 ml-md-4"><b> American Society of Civil Engineers</b></h6>
+                                        <h7 class="title font-weight-bold "><b> American Society of Civil Engineers</b></h7>
 
 
                                         <ul class="items">
@@ -992,10 +999,10 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-                    <h3 class="card-title">Other Interests</h3>
+                    <h6 class="card-title">Other Interests</h6>
                     <div>
 
-                        <ul class="card-text font-weight-light list-group list-group-flush">
+                        <ul class="card-text font-weight-light list-group list-group-flush ml-3">
 
                             <li class="list-group-item"><u>Sports:</u> Taekwondo and running</li>
 

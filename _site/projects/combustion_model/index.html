@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Wensi Wu| Combustion model </title>
+  <title>Wensi Wu | Combustion model </title>
   <meta name="description" content="Personal website of Wensi Wu.">
 
   <!-- Fonts and Icons -->
@@ -105,19 +105,20 @@
 
 <div class="row m-0" style="width: 100%;">
   <div class="col-sm-12 p-0">
-    <h5 class="font-weight-bold" style="letter-spacing: 0.1rem">Combusion Model</h5>
-    <h8 class="mb-4">A reactive flow model</h8>
+    <h5 class="font-weight-bold" style="letter-spacing: 0.1rem">Combusion Model: A reactive flow model</h5>
+    <h8 class="mb-4">Collaborator: Justyna Kosianka</h8>
   </div>
 </div>
 
 <div class="container-fluid p-0">
   <img class="img-responsive col-12" src="/assets/img/projects/combustion_model/ReInf_FLAME.png" alt="overview figure" />
-  <h8 class="text-center pl-5 ml-3"><u>Figure 1:</u> Temperature contour with \( Re=\infty \) at the end of the simulation time (\(\frac{tU}{H} = 90 \)).</h8>
-  <br />.
+  <p class="text-center"><u>Figure 1:</u> Temperature contour with \( Re=\infty \) at the end of the simulation time (\(\frac{tU}{H} = 90 \)).</p>
 </div>
 
 <div class="container-fluid p-0 text-justify">
-In this project, a simple premixed combusion numerical model is implemented in addtion to our Navier-Stoke solver to observe the interaction of liquid atomization and spray vaporization in a heat combustion process as the fuel consumed by the flame. A reactive flow in an augmentor with a mixture of fuel and oxidizer flows in the turbine exit channel is modelled. A box is used as a flame-holder to create a low-speed region to stablized the flame.
+In this project, a simple premixed combusion numerical model is implemented in addtion to our Navier-Stoke solver to observe the interaction of liquid
+atomization and spray vaporization in a heat combustion process as the fuel consumed by the flame. A reactive flow in an augmentor with a mixture of
+fuel and oxidizer flows in the turbine exit channel is modelled. A box is used as a flame-holder to create a low-speed region to stablized the flame.
 
 <div class="col mt-4 p-0">
 The combustion model is described by the following equations:
@@ -139,7 +140,7 @@ In the above expressions, \(\mathcal{D}=10^{-4}\), \(A=1000\), \(T_a = 1500\), a
 The viscous term in the Navier-Stoke is solved implicitly through the Crank-Nicolson scheme with alternating direction implicit (ADI) method. The combustion equations are solved using second order accuracy in time ( \( \textit i.e. \) Adams-Bashforth for convection and Crank-Nicolson with ADI for diffusion), second order central differencing in space for the diffusion term, and third order QUICK for the spatial discretization of the convective term.
 The convergence criterion for the simulations is set to \(\epsilon = 10^{-10}\) with maximum subiteration \(iter_{max} = 1000\). The total simulation run time is \(\frac{tU}{H} = 100 \).
 </div>
-<br>
+<br />
 
 <h7 class="title mt-4 p-0 text-left">Simulation results: </h7>
 <br><br>
@@ -152,7 +153,7 @@ The convergence criterion for the simulations is set to \(\epsilon = 10^{-10}\) 
       frameborder="0"
       allowfullscreen="">
   </iframe>
-    <h8 class="pl-3"><u>Video 1:</u> Temperature contour with \( Re=1000 \). </h8>
+    <p class="text-center"><u>Video 1:</u> Temperature contour with \( Re=1000 \). </p>
 </div>
 
 <div class="container-fluid p-0">
@@ -163,7 +164,7 @@ The convergence criterion for the simulations is set to \(\epsilon = 10^{-10}\) 
       frameborder="0"
       allowfullscreen="">
   </iframe>
-   <h8 class="pl-3"><u>Video 2:</u> Velocity contour with \( Re=1000 \). </h8>
+   <p class="text-center"><u>Video 2:</u> Velocity contour with \( Re=1000 \). </p>
 </div>
 
 <div class="container-fluid p-0">
@@ -174,7 +175,7 @@ The convergence criterion for the simulations is set to \(\epsilon = 10^{-10}\) 
       frameborder="0"
       allowfullscreen="">
   </iframe>
-    <h8 class="pl-3"><u>Video 3:</u> Temperature contour with \( Re=\infty \). </h8>
+    <p class="text-center"><u>Video 3:</u> Temperature contour with \( Re=\infty \). </p>
 </div>
 
 <div class="container-fluid p-0">
@@ -185,7 +186,7 @@ The convergence criterion for the simulations is set to \(\epsilon = 10^{-10}\) 
       frameborder="0"
       allowfullscreen="">
   </iframe>
-    <h8 class="pl-3"><u>Video 4:</u> Velocity contour with \( Re=\infty \). </h8>
+    <p class="text-center"><u>Video 4:</u> Velocity contour with \( Re=\infty \). </p>
 </div>
 
 

@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Wensi Wu | Bridge simulations </title>
+  <meta name="description" content="Personal website of Wensi Wu.">
+
+  <!-- Fonts and Icons -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/assets/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/academicons.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="/projects/interface_reduction/">
+</head>
+<body>
+  <!-- Header -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
+    <div class="container-fluid p-0">
+
+        <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Wensi</span> Wu</a>
+
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item ">
+            <a class="nav-link" href="/about_me/">
+              about me
+
+            </a>
+          </li>
+
+
+
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">
+                    cv
+
+                  </a>
+              </li>
+
+
+
+
+
+              <li class="nav-item navbar-active font-weight-bold">
+                  <a class="nav-link" href="/projects/">
+                    projects
+
+                      <span class="sr-only">(current)</span>
+
+                  </a>
+              </li>
+
+
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/publications/">
+                    publications
+
+                  </a>
+              </li>
+
+<!--
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/teaching/">
+                    teaching
+
+                  </a>
+              </li>
+
+-->
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scrolling Progress Bar
+  <progress id="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+   -->
+
+  <!-- Content -->
+  <div class="content">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb p-0 text-lowercase">
+        <li class="breadcrumb-item"><a href="/">home</a></li>
+        <li class="breadcrumb-item"><a href="/projects">projects</a></li>
+        <li class="breadcrumb-item active">Bridge simulations</li>
+      </ol>
+    </nav>
+
+    <div class="row m-0" style="width: 100%;">
+      <div class="col-sm-12 p-0">
+        <h5 class="font-weight-bold" style="letter-spacing: 0.1rem">A principled approach to design using high fidelity fluid-structure interaction simulations</h5>
+        <h8 class="mb-4">Collaborators: Christophe Bonneville and Christopher Earls</h8>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="container-fluid p-0">
+      <img class="img-responsive col-12" src="/assets/img/projects/FSI_BO/bo_fsi.png" alt="overview figure" />
+      <p class="text-center"><u>Figure 1:</u> A simple representation of the interplay between the FSI and Bayesian optimization solvers.</p>
+    </div>
+
+    <div class="container-fluid p-0 text-justify">
+      The present work explores the use of Bayesian optimization to optimize design
+      parameters in problems that require expensive fluid-structure interaction (FSI) models.
+      We first present a series of FSI verification test on a seleted problem that is close within the
+      design space of our ultimiate application, to gauge the fidelity of our FSI solver
+      and to gain confidence in the FSI solutions. Subsequenly, we incrementally increase the complexity
+      of our verification case, through a series of bridge simulation where we bridge FSI simulations with Bayesian optimization,
+      to bring the verification case closer to the desired application. In our case, we aim to exploit our
+      bridge simulations to efficiently optimize the design of an underwater, unmmaned, autonomous vehicle (UUAV) sail plane.
+      <br><br>
+      <h7 class="title mt-4 p-0 text-left">Fluid-structure interaction solver: </h7>
+      <div class="col mt-4 p-0">
+        Implicit partitioned FSI approach is adopted to orchestra the solutions within the FSI system.
+        An open source structural modeling finite element solver, CU-BENs, is used to model the response
+        within the structural subdomain. While in the fluid subdomain, an open source computational fluid dynamic package,
+        OpenFOAM 1.6-ext, is utilized. A coupling library is written to facilitate communications between the two solvers.
+        Simultaneously, to ensure equilibriums along the fluid-structure boundary are satisfied.
+        Time step advancement within the FSI system as well as solution convergence are managed
+        through the IQN-ILS quasi-Newton iteration method.
+        <br><br>
+        The canonical problem, Turek & Hron benchmark, is considered in our verficiation test
+        to gauge the accuracy of the FSI solver. The geometric configuration of the Turek & Hron benchmark
+        is similar enough to that of our desired application (<i>i.e.</i> fiber reinforce plastic UUAV sail plane).
+        This makes the benchmark a perfect candidate for our need. The velocity and pressure profiles of the
+        benchmark are shown in the videos below. The tip displacements of the cantilever beam, along with the drag and lift
+        forces act on the beam, are compared against the values reported
+        in the literature. Our results fall well below the acceptable threshold of percentage difference. Hence,
+        we are confident in our FSI predictions.
+      </div>
+      <br><br>
+      <div class="container-fluid p-0">
+        <iframe class = "img-responsive col-12"
+        width="420"
+        height="350"
+        src="https://drive.google.com/file/d/1uCbNF1jmu9Qd9rdeo_jbbMrnNmJObJrD/preview"
+        frameborder="0"
+        allowfullscreen="">
+      </iframe>
+        <p class="text-center"><u>Video 1:</u> Turek and Hron FSI3 velocity profile. </p>
+      </div>
+
+      <div class="container-fluid p-0">
+        <iframe class = "img-responsive col-12"
+        width="420"
+        height="350"
+        src="https://drive.google.com/file/d/19l5rLiIeuEGHj35DLAwaRNSOLDC0bx-U/preview"
+        frameborder="0"
+        allowfullscreen="">
+      </iframe>
+      <p class="text-center"><u>Video 2:</u> Turek and Hron FSI3 pressure profile. </p>
+    </div>
+
+    <h7 class="title mt-4 p-0 text-left">Bridge simulations: </h7>
+    <br><br>
+    <div class="container-fluid p-0 text-justify">
+      As a result of the verification test, we have identified suitable spatiotemporal
+      discretization for application space and numerical parameters for our selected
+      numerical schemes. We extend the canonical verfication model by altering
+      the engineering properties and perform Bayesian optimization using our bridging simulations.
+      The elastic modulus of the structure within the canonical verification model
+      are specified as a function of its cantilevered geometry: as linear, uniform,
+      and box functions respectively. In the example with linear elastic modulues function,
+      we minimize the tip displacment of the cantilever beam with outlet velocity constraint;
+      In the second and third case (uniform elastic modulus function and box function),
+      we aim to minimize the tip displacement without constraints. For all three cases,
+      our Bayesian optimizer is able to identify the best design parameters that lead to
+      a global minimum in the response within dozen of iterations.
+    </div>
+    <br><br>
+    <h7 class="title mt-4 p-0 text-left">Composite material properties selection for UUAV: </h7>
+    <br><br>
+    <div class="container-fluid p-0 text-justify">
+      With our experience with FSI verification and bridging simulations, we now
+      turn our attention towards the design optimization of a UUAV sail plane.
+      The velocity and pressure profiles of the UUAV sail plane simulation are shown
+      in the videos below. In this problem, we are looking to indentify the optimal
+      combination of sail plane stiffness and angle of attack that minimizes the drag force,
+      while imposing conditions on the lift force, the vertical tip displacement, along with
+      the outlet pressure differential.
+    </div>
+      <br><br>
+    <div class="container-fluid p-0">
+      <iframe class = "img-responsive col-12"
+      width="400"
+      height="350"
+      src="https://drive.google.com/file/d/1vcpFl0VsFeKDM56gXBdakE0T3VLIF99Z/preview"
+      frameborder="0"
+      allowfullscreen="">
+    </iframe>
+      <p class="text-center"><u>Video 3:</u> UUAV sail plane velocity profile. </p>
+    </div>
+
+    <div class="container-fluid p-0">
+      <iframe class = "img-responsive col-12"
+      width="400"
+      height="350"
+      src="https://drive.google.com/file/d/1CFKtAwYhqaAUAw7zu_CZcS57U7zuK9kq/preview"
+      frameborder="0"
+      allowfullscreen="">
+    </iframe>
+    <p class="text-center"><u>Video 4:</u> UUAV sail plane pressure profile. </p>
+  </div>
+    If you are interested in learning more, feel free to check out the following article for more details:
+    <br /><br />
+    Wensi Wu, Christophe Bonneville, and Christopher Earls. 2020. "A principled approach to design using high fidelity fluid-structure interaction simulations", In: <a href="https://arxiv.org/abs/2008.09687" target="_blank"><u>arXiv:2008.09687</u></a>.
+
+</div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright 2020 Wensi Wu.
+
+
+  </footer>
+
+  <!-- Core JavaScript Files -->
+  <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+  <script src="/assets/js/popper.min.js" type="text/javascript"></script>
+  <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="/assets/js/mdb.min.js" type="text/javascript"></script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="/assets/js/common.js"></script>
+
+  <!-- Scrolling Progress Bar -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var navbarHeight = $('#navbar').outerHeight(true);
+      $('body').css({ 'padding-top': navbarHeight });
+      $('progress-container').css({ 'padding-top': navbarHeight });
+      var progressBar = $('#progress');
+      progressBar.css({ 'top': navbarHeight });
+      var getMax = function() { return $(document).height() - $(window).height(); }
+      var getValue = function() { return $(window).scrollTop(); }
+      // Check if the browser supports the progress element.
+      if ('max' in document.createElement('progress')) {
+        // Set the 'max' attribute for the first time.
+        progressBar.attr({ max: getMax() });
+        progressBar.attr({ value: getValue() });
+
+        $(document).on('scroll', function() {
+          // On scroll only the 'value' attribute needs to be calculated.
+          progressBar.attr({ value: getValue() });
+        });
+
+        $(window).resize(function() {
+          var navbarHeight = $('#navbar').outerHeight(true);
+          $('body').css({ 'padding-top': navbarHeight });
+          $('progress-container').css({ 'padding-top': navbarHeight });
+          progressBar.css({ 'top': navbarHeight });
+          // On resize, both the 'max' and 'value' attributes need to be calculated.
+          progressBar.attr({ max: getMax(), value: getValue() });
+        });
+      } else {
+        var max = getMax(), value, width;
+        var getWidth = function() {
+          // Calculate the window width as a percentage.
+          value = getValue();
+          width = (value/max) * 100;
+          width = width + '%';
+          return width;
+        }
+        var setWidth = function() { progressBar.css({ width: getWidth() }); };
+        setWidth();
+        $(document).on('scroll', setWidth);
+        $(window).on('resize', function() {
+          // Need to reset the 'max' attribute.
+          max = getMax();
+          setWidth();
+        });
+      }
+    });
+  </script>
+
+  <!-- Code Syntax Highlighting -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <script src="/assets/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- Script Used for Randomizing the Projects Order -->
+  <!-- <script type="text/javascript">
+    $.fn.shuffleChildren = function() {
+      $.each(this.get(), function(index, el) {
+        var $el = $(el);
+        var $find = $el.children();
+
+        $find.sort(function() {
+          return 0.5 - Math.random();
+        });
+
+        $el.empty();
+        $find.appendTo($el);
+      });
+    };
+    $("#projects").shuffleChildren();
+  </script> -->
+
+  <!-- Project Cards Layout -->
+  <script type="text/javascript">
+    var $grid = $('#projects');
+
+    // $grid.masonry({ percentPosition: true });
+    // $grid.masonry('layout');
+
+    // Trigger after images load.
+    $grid.imagesLoaded().progress(function() {
+      $grid.masonry({ percentPosition: true });
+      $grid.masonry('layout');
+    });
+  </script>
+
+  <!-- Enable Tooltips -->
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+</body>
+</html>

@@ -119,10 +119,10 @@
     <div class="container-fluid p-0 text-justify">
       The present work explores the use of Bayesian optimization to optimize design
       parameters in problems that require expensive fluid-structure interaction (FSI) models.
-      We first present a series of FSI verification test on a seleted problem that is close within the
+      We first present a series of FSI verification tests on a seleted problem that is close within the
       design space of our ultimiate application, to gauge the fidelity of our FSI solver
-      and to gain confidence in the FSI solutions. Subsequenly, we incrementally increase the complexity
-      of our verification case, through a series of bridge simulation where we bridge FSI simulations with Bayesian optimization,
+      and gain confidence in the FSI solutions. Subsequenly, we incrementally increase the complexity
+      of our verification case, through a series of bridge simulations where we bridge FSI simulations with Bayesian optimization,
       to bring the verification case closer to the desired application. In our case, we aim to exploit our
       bridge simulations to efficiently optimize the design of an underwater, unmmaned, autonomous vehicle (UUAV) sail plane.
       <br><br>
@@ -136,7 +136,7 @@
         Time step advancement within the FSI system as well as solution convergence are managed
         through the IQN-ILS quasi-Newton iteration method.
         <br><br>
-        The canonical problem, Turek & Hron benchmark, is considered in our verficiation test
+        The canonical problem, Turek & Hron benchmark, is considered in our verification procedure
         to gauge the accuracy of the FSI solver. The geometric configuration of the Turek & Hron benchmark
         is similar enough to that of our desired application (<i>i.e.</i> fiber reinforce plastic UUAV sail plane).
         This makes the benchmark a perfect candidate for our need. The velocity and pressure profiles of the
@@ -172,7 +172,7 @@
     <br><br>
     <div class="container-fluid p-0 text-justify">
       As a result of the verification test, we have identified suitable spatiotemporal
-      discretization for application space and numerical parameters for our selected
+      discretization for the problem of our interests and numerical parameters for our selected
       numerical schemes. We extend the canonical verfication model by altering
       the engineering properties and perform Bayesian optimization using our bridging simulations.
       The elastic modulus of the structure within the canonical verification model

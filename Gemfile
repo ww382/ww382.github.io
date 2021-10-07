@@ -7,3 +7,5 @@ group :jekyll_plugins do
     gem 'jemoji'
     gem 'unicode'
 end
+
+gem "webrick", "~> 1.7"

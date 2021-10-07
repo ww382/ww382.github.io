@@ -1,0 +1,168 @@
+current directory: /Users/ww382/Google Drive/ww382.github.io/vendor/bundle/ruby/3.0.0/gems/unicode-0.4.4.4/ext/unicode
+/usr/local/opt/ruby/bin/ruby -I /usr/local/Cellar/ruby/3.0.2/lib/ruby/3.0.0 -r ./siteconf20211007-53645-5evgbn.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ww382/Google Drive/ww382.github.io/vendor/bundle/ruby/3.0.0/gems/unicode-0.4.4.4/ext/unicode
+make DESTDIR\= clean
+
+current directory: /Users/ww382/Google Drive/ww382.github.io/vendor/bundle/ruby/3.0.0/gems/unicode-0.4.4.4/ext/unicode
+make DESTDIR\=
+compiling unicode.c
+warning: unknown warning option '-Wmisleading-indentation'; did you mean '-Wmissing-declarations'? [-Wunknown-warning-option]
+unicode.c:646:50: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&wstr1, RSTRING_PTR(str1), RSTRING_LEN(str1));
+  ~~~~~~~~~~~~~~~~~~~                            ^~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:647:50: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&wstr2, RSTRING_PTR(str2), RSTRING_LEN(str2));
+  ~~~~~~~~~~~~~~~~~~~                            ^~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:688:50: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&wstr1, RSTRING_PTR(str1), RSTRING_LEN(str1));
+  ~~~~~~~~~~~~~~~~~~~                            ^~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:689:50: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&wstr2, RSTRING_PTR(str2), RSTRING_LEN(str2));
+  ~~~~~~~~~~~~~~~~~~~                            ^~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:725:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:751:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:777:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:803:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:830:49: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr1, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                           ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:860:49: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr1, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                           ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:890:49: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr1, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                           ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:919:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:945:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:976:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&ustr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:1039:20: warning: incompatible pointer types passing 'VALUE (get_categories_param *)' (aka 'unsigned long (struct _get_categories_param *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-pointer-types]
+  return rb_ensure(get_categories_internal, (VALUE)&param,
+                   ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/iterator.h:53:24: note: passing argument to parameter here
+VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+                       ^
+unicode.c:1040:20: warning: incompatible pointer types passing 'VALUE (WString *)' (aka 'unsigned long (struct _WString *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-pointer-types]
+                   get_categories_ensure, (VALUE)&wstr);
+                   ^~~~~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/iterator.h:53:46: note: passing argument to parameter here
+VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+                                             ^
+unicode.c:1037:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&wstr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:1057:20: warning: incompatible pointer types passing 'VALUE (get_categories_param *)' (aka 'unsigned long (struct _get_categories_param *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-pointer-types]
+  return rb_ensure(get_categories_internal, (VALUE)&param,
+                   ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/iterator.h:53:24: note: passing argument to parameter here
+VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+                       ^
+unicode.c:1058:20: warning: incompatible pointer types passing 'VALUE (WString *)' (aka 'unsigned long (struct _WString *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-pointer-types]
+                   get_categories_ensure, (VALUE)&wstr);
+                   ^~~~~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/iterator.h:53:46: note: passing argument to parameter here
+VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+                                             ^
+unicode.c:1055:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&wstr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:1079:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&wstr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+unicode.c:1227:20: warning: incompatible pointer types passing 'VALUE (get_text_elements_param *)' (aka 'unsigned long (struct _get_text_elements_param *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-pointer-types]
+  return rb_ensure(get_text_elements_internal, (VALUE)&param,
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/iterator.h:53:24: note: passing argument to parameter here
+VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+                       ^
+unicode.c:1228:20: warning: incompatible pointer types passing 'VALUE (WString *)' (aka 'unsigned long (struct _WString *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-pointer-types]
+                   get_text_elements_ensure, (VALUE)&wstr);
+                   ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/iterator.h:53:46: note: passing argument to parameter here
+VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+                                             ^
+unicode.c:1225:48: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  WStr_allocWithUTF8L(&wstr, RSTRING_PTR(str), RSTRING_LEN(str));
+  ~~~~~~~~~~~~~~~~~~~                          ^~~~~~~~~~~~~~~~
+/usr/local/Cellar/ruby/3.0.2/include/ruby-3.0.0/ruby/internal/core/rstring.h:44:27: note: expanded from macro 'RSTRING_LEN'
+#define RSTRING_LEN       RSTRING_LEN
+                          ^
+25 warnings generated.
+compiling ustring.c
+warning: unknown warning option '-Wmisleading-indentation'; did you mean '-Wmissing-declarations'? [-Wunknown-warning-option]
+1 warning generated.
+compiling wstring.c
+warning: unknown warning option '-Wmisleading-indentation'; did you mean '-Wmissing-declarations'? [-Wunknown-warning-option]
+1 warning generated.
+linking shared-object unicode/unicode_native.bundle
+ld: warning: dylib (/usr/local/Cellar/ruby/3.0.2/lib/libruby.3.0.dylib) was built for newer macOS version (11.0) than being linked (10.16)
+
+current directory: /Users/ww382/Google Drive/ww382.github.io/vendor/bundle/ruby/3.0.0/gems/unicode-0.4.4.4/ext/unicode
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 unicode_native.bundle ./.gem.20211007-53645-s6i557/unicode

@@ -13,20 +13,26 @@ html, body { max-width: 100%; overflow-x: hidden; }
    the homepage photo's actual size instead of leaving it unconstrained. */
 .profile-img-big { max-width: 220px; }
 
-/* Homepage hero: photo + button stack side-by-side with the intro text,
-   centered as a unit on the page, collapsing to a single column on narrow
-   screens. */
-.home-hero { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 4rem; padding-top: 2rem; }
+/* Homepage: vertically center the hero in the viewport (footer is
+   position:fixed in the vendor theme, so it floats over the bottom rather
+   than taking up flow space). */
+body.home-page { display: flex; flex-direction: column; min-height: 100vh; }
+body.home-page .content { flex: 1; display: flex; align-items: center; }
+
+/* Homepage hero: photo beside the intro text and buttons, centered as a
+   unit on the page, collapsing to a single column on narrow screens. */
+.home-hero { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 4rem; }
 .home-photo { flex: 0 0 auto; width: 220px; text-align: center; }
 .home-photo .profile-img-big { width: 100%; }
-.home-buttons { margin-top: 1.25rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.home-buttons { margin-top: 1.5rem; display: flex; gap: 0.5rem; justify-content: flex-start; flex-wrap: wrap; }
 .home-info { flex: 0 1 480px; min-width: 0; }
 .home-info h5.title { font-size: 1.5rem; }
 .home-info h7 { font-size: 1rem; }
 
 @media (max-width: 575.98px) {
-  .home-hero { flex-direction: column; align-items: center; text-align: center; padding-top: 1rem; gap: 2rem; }
+  .home-hero { flex-direction: column; align-items: center; text-align: center; gap: 2rem; }
   .home-info { width: 100%; max-width: 100%; text-align: center; }
+  .home-buttons { justify-content: center; }
 }
 
 /* About-me hero: photo + social icons (centered under the photo) beside the
@@ -38,9 +44,16 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .about-icons { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1rem; }
 .about-info { flex: 1 1 380px; min-width: 0; padding-top: 1rem; }
 
+/* Icons are centered under the 220px photo (not flush with its left edge),
+   so the News section below is nudged to match the icon row's actual left
+   edge (measured: 52px in from the photo's left edge) rather than the
+   photo's own edge. */
+.news { padding-left: 52px; }
+
 @media (max-width: 575.98px) {
   .about-hero { flex-direction: column; align-items: center; text-align: center; padding-top: 1rem; }
   .about-info { width: 100%; text-align: center; }
+  .news { padding-left: 0; }
 }
 
 /* CV page: PDF viewer sized by viewport height, contained so the browser's

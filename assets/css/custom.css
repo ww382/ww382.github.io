@@ -1,0 +1,53 @@
+/* Site-specific overrides on top of the vendor theme (main.css). Keeping
+   these separate avoids hand-editing the 14k-line vendor bundle. */
+
+/* Safety net: nothing on the page should ever force horizontal scroll on
+   narrow screens, regardless of what any individual element does. */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Vendor theme caps .content/.container-fluid at 800px; widen it so page
+   content isn't stranded in a narrow column on larger screens. */
+.container-fluid, .content { max-width: 1140px; }
+
+/* Vendor rule has a typo ("150 px") that makes it invalid, so this fixes
+   the homepage photo's actual size instead of leaving it unconstrained. */
+.profile-img-big { max-width: 220px; }
+
+/* Homepage hero: photo + button stack side-by-side with the intro text,
+   centered as a unit on the page, collapsing to a single column on narrow
+   screens. */
+.home-hero { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 4rem; padding-top: 2rem; }
+.home-photo { flex: 0 0 auto; width: 220px; text-align: center; }
+.home-photo .profile-img-big { width: 100%; }
+.home-buttons { margin-top: 1.25rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.home-info { flex: 0 1 480px; min-width: 0; }
+.home-info h5.title { font-size: 1.5rem; }
+.home-info h7 { font-size: 1rem; }
+
+@media (max-width: 575.98px) {
+  .home-hero { flex-direction: column; align-items: center; text-align: center; padding-top: 1rem; gap: 2rem; }
+  .home-info { width: 100%; max-width: 100%; text-align: center; }
+}
+
+/* About-me hero: photo + social icons (centered under the photo) beside the
+   bio text, both flush with the same left edge as the News section below so
+   everything lines up as one column. */
+.about-hero { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2.5rem; padding-top: 2rem; }
+.about-photo { flex: 0 0 auto; width: 220px; text-align: center; }
+.about-photo .profile-img { width: 100%; }
+.about-icons { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1rem; }
+.about-info { flex: 1 1 380px; min-width: 0; padding-top: 1rem; }
+
+@media (max-width: 575.98px) {
+  .about-hero { flex-direction: column; align-items: center; text-align: center; padding-top: 1rem; }
+  .about-info { width: 100%; text-align: center; }
+}
+
+/* CV page: PDF viewer sized by viewport height, contained so the browser's
+   built-in PDF UI can never force horizontal page scroll on narrow screens. */
+.cv-pdf-wrapper { width: 100%; max-width: 100%; overflow: hidden; }
+.cv-pdf { display: block; width: 100%; height: 85vh; border: 0; }
+
+@media (max-width: 575.98px) {
+  .cv-pdf { height: 70vh; }
+}

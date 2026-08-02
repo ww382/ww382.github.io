@@ -14,6 +14,7 @@
                     <link rel="stylesheet" href="/assets/css/all.min.css">
                         <link rel="stylesheet" href="/assets/css/academicons.min.css">
                             <link rel="stylesheet" href="/assets/css/main.css">
+                    <link rel="stylesheet" href="/assets/css/custom.css">
                                 <link rel="canonical" href="/cv/">
                                     </head>
     <body>
@@ -56,17 +57,11 @@
         <!-- Content -->
         <div class="content">
 
-            <h4 style="letter-spacing: .1rem">Curriculum Vitae
-              <!-- Place PDF download link at the top right. -->
-                <a class="ml-2" href="/assets/pdf/wensiwu_cv.pdf" target="_blank">
-                  <img height="50px" src="/assets/img/pdf_icon.jpg" />
-                </a>
-            </h4>
-            <h7></h7>
-
             <div class="cv">
                 <div class="card mt-3 p-3">
-                    <embed src="/assets/pdf/wensiwu_cv.pdf" type="application/pdf" width="100%" height="1100px" style="min-height: 80vh;" />
+                    <div class="cv-pdf-wrapper">
+                        <embed class="cv-pdf" src="/assets/pdf/wensiwu_cv.pdf" type="application/pdf" />
+                    </div>
                 </div>
             </div>
 

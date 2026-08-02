@@ -15,28 +15,51 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 /* Homepage: vertically center the hero in the viewport (footer is
    position:fixed in the vendor theme, so it floats over the bottom rather
-   than taking up flow space). */
+   than taking up flow space). Column direction + justify-content centers
+   vertically on the main axis while leaving align-items at its default
+   (stretch), so .home-hero still stretches to the full content width --
+   using align-items:center here instead would shrink .home-hero to fit its
+   content and left-anchor it, breaking horizontal centering. */
 body.home-page { display: flex; flex-direction: column; min-height: 100vh; }
-body.home-page .content { flex: 1; display: flex; align-items: center; }
+body.home-page .content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 
-/* Homepage hero: photo beside the intro text and buttons, centered as a
-   unit on the page. flex-wrap stays "nowrap" here deliberately -- with
-   "wrap", the browser would silently break into two stacked rows (still
-   left-aligned, like desktop) at in-between widths, before the explicit
-   single-column layout below ever kicks in. The two states are switched
-   only by the media query, never by the browser deciding to wrap. */
-.home-hero { display: flex; flex-wrap: nowrap; align-items: flex-start; justify-content: center; gap: 4rem; }
+/* Homepage hero: photo's left edge lines up with the right edge of the
+   "Wensi Wu" brand text in the nav bar, and the text column's right edge
+   lines up with the left edge of the "About me" nav link.
+
+   This needs a formula, not a fixed margin, because of a wrinkle in the
+   vendor markup: Bootstrap's base .navbar class carries its own 1rem
+   (16px) horizontal padding around the nav's .container-fluid, which
+   .content has no equivalent of. Both .container-fluid and .content cap
+   at 1140px and center via margin:auto (line 10), but because of that
+   extra 16px, .container-fluid stops being wide enough to need centering
+   16px sooner than .content does (at viewport 1172px vs 1140px) -- so
+   between those two widths, .content is centering while the nav still
+   isn't, and the resulting mismatch tapers linearly across that 32px
+   band rather than switching cleanly at one breakpoint. The
+   max(0px, (100vw - Xpx)/2) terms reconstruct each box's own centering
+   margin so the difference between them cancels out continuously at
+   every width instead of only at the two ends. Verified by DOM
+   measurement across 1000-1600px, including inside the 1140-1172 band. */
+.home-hero {
+  display: flex; flex-wrap: nowrap; align-items: flex-start; justify-content: space-between;
+  margin-left: calc(108px + max(0px, (100vw - 1172px) / 2) - max(0px, (100vw - 1140px) / 2));
+  margin-right: calc(154px + max(0px, (100vw - 1172px) / 2) - max(0px, (100vw - 1140px) / 2));
+}
 .home-photo { flex: 0 0 auto; width: 220px; text-align: center; }
 .home-photo .profile-img-big { width: 100%; }
-.home-buttons { margin-top: 1.5rem; display: flex; gap: 0.5rem; justify-content: flex-start; flex-wrap: wrap; }
-.home-info { flex: 0 1 480px; min-width: 0; }
-.home-info h5.title { font-size: 1.5rem; }
-.home-info h7 { font-size: 1rem; }
+.home-info { flex: 0 1 700px; min-width: 0; }
+.home-info h5.title { font-size: 1.65rem; }
+.home-info h7 { font-size: 1.1rem; }
 
-@media (max-width: 767.98px) {
-  .home-hero { flex-direction: column; flex-wrap: wrap; align-items: center; text-align: center; gap: 2rem; }
+/* Breakpoint is intentionally higher than the ~900-950px point where the
+   department line would start wrapping in two-column mode -- below this,
+   the single-column layout gets the text the full content width instead. */
+@media (max-width: 991.98px) {
+  .home-hero { flex-direction: column; flex-wrap: wrap; align-items: center; text-align: center; gap: 2rem; margin-left: 0; margin-right: 0; }
   .home-info { width: 100%; max-width: 100%; text-align: center; }
-  .home-buttons { justify-content: center; }
+  /* Vendor .title rule forces text-align:left !important; must match it here. */
+  .home-info h5.title { text-align: center !important; }
 }
 
 /* About-me hero: photo + social icons (centered under the photo) beside the

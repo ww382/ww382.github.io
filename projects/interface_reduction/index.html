@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Wensi Wu | Interface reduction </title>
+  <meta name="description" content="Personal website of Wensi Wu.">
+
+  <!-- Fonts and Icons -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/assets/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/academicons.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="/projects/interface_reduction/">
+</head>
+<body>
+  <!-- Header -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
+    <div class="container-fluid p-0">
+
+        <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Wensi</span> Wu</a>
+
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item ">
+            <a class="nav-link" href="/about_me/">
+              about me
+
+            </a>
+          </li>
+
+
+
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">
+                    cv
+
+                  </a>
+              </li>
+
+
+
+
+
+              <li class="nav-item navbar-active font-weight-bold">
+                  <a class="nav-link" href="/projects/">
+                    projects
+
+                      <span class="sr-only">(current)</span>
+
+                  </a>
+              </li>
+
+
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/publications/">
+                    publications
+
+                  </a>
+              </li>
+
+<!--
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/teaching/">
+                    teaching
+
+                  </a>
+              </li>
+
+-->
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scrolling Progress Bar
+  <progress id="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+   -->
+
+  <!-- Content -->
+  <div class="content">
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb p-0 text-lowercase">
+    <li class="breadcrumb-item"><a href="/">home</a></li>
+    <li class="breadcrumb-item"><a href="/projects">projects</a></li>
+    <li class="breadcrumb-item active">Interface reduction</li>
+  </ol>
+</nav>
+
+<div class="row m-0" style="width: 100%;">
+  <div class="col-sm-12 p-0">
+    <h5 class="font-weight-bold" style="letter-spacing: 0.1rem">Hurty/Craig-Bampton models with interface reduction for mechanical joints</h5>
+    <h8 class="mb-4">Collaborators: Patrick Hughes, Wesley Scott, Robert J. Kuether, Matthew S. Allen, Paolo Tiso</h8>
+  </div>
+</div>
+
+<br><br>
+<div class="container-fluid p-0">
+  <img class="img-responsive col-12" src="/assets/img/projects/interface_reduction/interface_deform.png" alt="overview figure" />
+  <p class="text-center"><u>Figure 1:</u> A close-up view of interface deformation along the contact surface of two C-Beams after static preload.</p>
+</div>
+
+<div class="container-fluid p-0 text-justify">
+The present work explores the perfomance of interface reduction techniques (<i>i.e.</i> Hurty/Craig-Bamption substructuring and system-level characteristic constraint modes) on a
+nonlinear model with node-to-node contact for a benchmark structure consisting of two c-shape beams bolted together at each end. The use of Hurty/Craig-Bamption substructuring and
+system-level characteristic constraint modes greatly reduces the computation time for jointed structures analysis compared to full model analysis.
+<br><br>
+<h7 class="title mt-4 p-0 text-left">Background & motivation: </h7>
+<div class="col mt-4 p-0">
+Finite element analysis is a popular computational analysis method in nowaday research across many disciplines. However, in order to accurately capture the physics at play, finite element models usually require
+extremely fine mesh with potentially hundreds of thousands of elements and millions of DOF. This is rather computational costly and time intensive.
+In models with substructures connected to one another via contacting boundary conditions, the interface DOF may control the dynamic response of the system, while the numerous interior
+(non-interface) DOF provide unnecessary model redundancy. One way to minimize computational reduncancy is by reducing interior DOF through CMS methods, which approximate the substructure interior with a relatively
+small set of mode shapes, while leaving the interface DOF unchanged. One such method is the Hurty/Craig-Bampton technique.
+<br /><br />
+<div class="container-fluid p-0 ml-5">
+  <img class="img-responsive col-12 ml-5 pl-5" style="max-width:75%;" src="/assets/img/projects/interface_reduction/background.png" alt="overview figure" />
+</div>
+<p class="text-center"><u>Figure 2:</u> A substructure model.</p>
+<br />
+In order to achieve optimal speedup, interface reduction technique can be used to further alleviate computational burden. Any interface reduction basis must satisfy
+a number of criteria: (1) allow for realistic deformations in the contact area, (2) reproduce the distribution of contact forces, (3) match the overall dynamic
+response of the HCB model within a reasonable margin of error, and (4) be efficient enough to provide overall computational savings. In the present work, an
+interface reduction tenchique, Extended System-Level Characteristic Constraint Modes, is utilized to reduce the DOF along the contact interface.
+<br /><br />
+If you are interested in learning more, feel free to check out the following article for more details of the reduction methods as well as some of the research findings:
+<br /><br />
+Patrick Hughes, Wesley Scott, Wensi Wu, Robert J. Kuether, Matthew S. Allen, and Paolo Tiso. 2018. <a href="https://link.springer.com/chapter/10.1007/978-3-319-74280-9_1" target="_blank"><u>"Interface Reduction on Hurty/Craig-Bampton Substructures with Frictionless Contact"</u></a>,
+In: Kerschen G. (eds) Nonlinear Dynamics, Volume 1. Conference Proceedings of the Society for Experimental Mechanics Series. Springer, Cham.
+
+</div>
+
+</div>
+
+</div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright 2020 Wensi Wu.
+
+
+  </footer>
+
+  <!-- Core JavaScript Files -->
+  <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+  <script src="/assets/js/popper.min.js" type="text/javascript"></script>
+  <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="/assets/js/mdb.min.js" type="text/javascript"></script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="/assets/js/common.js"></script>
+
+  <!-- Scrolling Progress Bar -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var navbarHeight = $('#navbar').outerHeight(true);
+      $('body').css({ 'padding-top': navbarHeight });
+      $('progress-container').css({ 'padding-top': navbarHeight });
+      var progressBar = $('#progress');
+      progressBar.css({ 'top': navbarHeight });
+      var getMax = function() { return $(document).height() - $(window).height(); }
+      var getValue = function() { return $(window).scrollTop(); }
+      // Check if the browser supports the progress element.
+      if ('max' in document.createElement('progress')) {
+        // Set the 'max' attribute for the first time.
+        progressBar.attr({ max: getMax() });
+        progressBar.attr({ value: getValue() });
+
+        $(document).on('scroll', function() {
+          // On scroll only the 'value' attribute needs to be calculated.
+          progressBar.attr({ value: getValue() });
+        });
+
+        $(window).resize(function() {
+          var navbarHeight = $('#navbar').outerHeight(true);
+          $('body').css({ 'padding-top': navbarHeight });
+          $('progress-container').css({ 'padding-top': navbarHeight });
+          progressBar.css({ 'top': navbarHeight });
+          // On resize, both the 'max' and 'value' attributes need to be calculated.
+          progressBar.attr({ max: getMax(), value: getValue() });
+        });
+      } else {
+        var max = getMax(), value, width;
+        var getWidth = function() {
+          // Calculate the window width as a percentage.
+          value = getValue();
+          width = (value/max) * 100;
+          width = width + '%';
+          return width;
+        }
+        var setWidth = function() { progressBar.css({ width: getWidth() }); };
+        setWidth();
+        $(document).on('scroll', setWidth);
+        $(window).on('resize', function() {
+          // Need to reset the 'max' attribute.
+          max = getMax();
+          setWidth();
+        });
+      }
+    });
+  </script>
+
+  <!-- Code Syntax Highlighting -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <script src="/assets/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- Script Used for Randomizing the Projects Order -->
+  <!-- <script type="text/javascript">
+    $.fn.shuffleChildren = function() {
+      $.each(this.get(), function(index, el) {
+        var $el = $(el);
+        var $find = $el.children();
+
+        $find.sort(function() {
+          return 0.5 - Math.random();
+        });
+
+        $el.empty();
+        $find.appendTo($el);
+      });
+    };
+    $("#projects").shuffleChildren();
+  </script> -->
+
+  <!-- Project Cards Layout -->
+  <script type="text/javascript">
+    var $grid = $('#projects');
+
+    // $grid.masonry({ percentPosition: true });
+    // $grid.masonry('layout');
+
+    // Trigger after images load.
+    $grid.imagesLoaded().progress(function() {
+      $grid.masonry({ percentPosition: true });
+      $grid.masonry('layout');
+    });
+  </script>
+
+  <!-- Enable Tooltips -->
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+</body>
+</html>

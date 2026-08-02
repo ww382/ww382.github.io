@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Wensi Wu | Combustion model </title>
+  <meta name="description" content="Personal website of Wensi Wu.">
+
+  <!-- Fonts and Icons -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/assets/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/academicons.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="/projects/combustion_model/">
+</head>
+<body>
+  <!-- Header -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
+    <div class="container-fluid p-0">
+
+        <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Wensi</span> Wu</a>
+
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item ">
+            <a class="nav-link" href="/about_me/">
+              about me
+
+            </a>
+          </li>
+
+
+
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">
+                    cv
+
+                  </a>
+              </li>
+
+
+
+
+
+              <li class="nav-item navbar-active font-weight-bold">
+                  <a class="nav-link" href="/projects/">
+                    projects
+
+                      <span class="sr-only">(current)</span>
+
+                  </a>
+              </li>
+
+
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/publications/">
+                    publications
+
+                  </a>
+              </li>
+
+<!--
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/teaching/">
+                    teaching
+
+                  </a>
+              </li>
+
+-->
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scrolling Progress Bar
+  <progress id="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+   -->
+
+  <!-- Content -->
+  <div class="content">
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb p-0 text-lowercase">
+    <li class="breadcrumb-item"><a href="/">home</a></li>
+    <li class="breadcrumb-item"><a href="/projects">projects</a></li>
+    <li class="breadcrumb-item active">Combustion model</li>
+  </ol>
+</nav>
+
+<div class="row m-0" style="width: 100%;">
+  <div class="col-sm-12 p-0">
+    <h5 class="font-weight-bold" style="letter-spacing: 0.1rem">Combusion Model: A reactive flow model</h5>
+    <h8 class="mb-4">Collaborator: Justyna Kosianka</h8>
+  </div>
+</div>
+
+<div class="container-fluid p-0">
+  <img class="img-responsive col-12" src="/assets/img/projects/combustion_model/ReInf_FLAME.png" alt="overview figure" />
+  <p class="text-center"><u>Figure 1:</u> Temperature contour with \( Re=\infty \) at the end of the simulation time (\(\frac{tU}{H} = 90 \)).</p>
+</div>
+
+<div class="container-fluid p-0 text-justify">
+In this project, a simple premixed combusion numerical model is implemented in addtion to our Navier-Stoke solver to observe the interaction of liquid
+atomization and spray vaporization in a heat combustion process as the fuel consumed by the flame. A reactive flow in an augmentor with a mixture of
+fuel and oxidizer flows in the turbine exit channel is modelled. A box is used as a flame-holder to create a low-speed region to stablized the flame.
+
+<div class="col mt-4 p-0">
+The combustion model is described by the following equations:
+$$ \frac{\partial \phi}{\partial t} + \nabla \cdot \left( u \phi \right) = \mathcal{D} \nabla^2\phi + \dot{\omega_{\phi}} $$
+and
+$$ \frac{\partial T}{\partial t} + \nabla \cdot \left( u T \right) = \mathcal{D} \nabla^2\phi + \dot{\omega_{T}}. $$
+where \( \phi \) represents the amount of combustible material avaliable and \( T \) represents the temperature.
+
+In these, the combustion source terms are taken to be
+$$ \dot{\omega_{\phi}} =-\dot{\omega} $$
+and
+$$ \dot{\omega_{T}} =A\dot{\omega} $$
+where we consider the following Arrhenius reaction
+$$ \dot{\omega}= \phi \left( \frac{T}{T_b} \right)^3 e^{\frac{- T_a}{T}}. $$
+In the above expressions, \(\mathcal{D}=10^{-4}\), \(A=1000\), \(T_a = 1500\), and \(T_b = 1000\). As initial conditions, we have an \(H \times H\) region behind the square obstruction where \(T=2500\).
+</div>
+
+<div class="col mt-4 p-0">
+The viscous term in the Navier-Stoke is solved implicitly through the Crank-Nicolson scheme with alternating direction implicit (ADI) method. The combustion equations are solved using second order accuracy in time ( \( \textit i.e. \) Adams-Bashforth for convection and Crank-Nicolson with ADI for diffusion), second order central differencing in space for the diffusion term, and third order QUICK for the spatial discretization of the convective term.
+The convergence criterion for the simulations is set to \(\epsilon = 10^{-10}\) with maximum subiteration \(iter_{max} = 1000\). The total simulation run time is \(\frac{tU}{H} = 100 \).
+</div>
+<br />
+
+<h7 class="title mt-4 p-0 text-left">Simulation results: </h7>
+<br><br>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/191nY7MksZrlXUzaDkD_BshsWxgYt0ktR/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <p class="text-center"><u>Video 1:</u> Temperature contour with \( Re=1000 \). </p>
+</div>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1_ezwT5-EbsR2k8b19WXz0XoqBOWxobsa/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+   <p class="text-center"><u>Video 2:</u> Velocity contour with \( Re=1000 \). </p>
+</div>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/1FJShDtMQhrwuUm2wJiU5OcYDrXnT3FBB/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <p class="text-center"><u>Video 3:</u> Temperature contour with \( Re=\infty \). </p>
+</div>
+
+<div class="container-fluid p-0">
+  <iframe class = "img-responsive col-12"
+      width="790"
+      height="262"
+      src="https://drive.google.com/file/d/108AdOSTcst6Pt8y37oJZGeQRW2I5GU4P/preview"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+    <p class="text-center"><u>Video 4:</u> Velocity contour with \( Re=\infty \). </p>
+</div>
+
+
+</div>
+
+</div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright 2020 Wensi Wu.
+
+
+  </footer>
+
+  <!-- Core JavaScript Files -->
+  <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+  <script src="/assets/js/popper.min.js" type="text/javascript"></script>
+  <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="/assets/js/mdb.min.js" type="text/javascript"></script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="/assets/js/common.js"></script>
+
+  <!-- Scrolling Progress Bar -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var navbarHeight = $('#navbar').outerHeight(true);
+      $('body').css({ 'padding-top': navbarHeight });
+      $('progress-container').css({ 'padding-top': navbarHeight });
+      var progressBar = $('#progress');
+      progressBar.css({ 'top': navbarHeight });
+      var getMax = function() { return $(document).height() - $(window).height(); }
+      var getValue = function() { return $(window).scrollTop(); }
+      // Check if the browser supports the progress element.
+      if ('max' in document.createElement('progress')) {
+        // Set the 'max' attribute for the first time.
+        progressBar.attr({ max: getMax() });
+        progressBar.attr({ value: getValue() });
+
+        $(document).on('scroll', function() {
+          // On scroll only the 'value' attribute needs to be calculated.
+          progressBar.attr({ value: getValue() });
+        });
+
+        $(window).resize(function() {
+          var navbarHeight = $('#navbar').outerHeight(true);
+          $('body').css({ 'padding-top': navbarHeight });
+          $('progress-container').css({ 'padding-top': navbarHeight });
+          progressBar.css({ 'top': navbarHeight });
+          // On resize, both the 'max' and 'value' attributes need to be calculated.
+          progressBar.attr({ max: getMax(), value: getValue() });
+        });
+      } else {
+        var max = getMax(), value, width;
+        var getWidth = function() {
+          // Calculate the window width as a percentage.
+          value = getValue();
+          width = (value/max) * 100;
+          width = width + '%';
+          return width;
+        }
+        var setWidth = function() { progressBar.css({ width: getWidth() }); };
+        setWidth();
+        $(document).on('scroll', setWidth);
+        $(window).on('resize', function() {
+          // Need to reset the 'max' attribute.
+          max = getMax();
+          setWidth();
+        });
+      }
+    });
+  </script>
+
+  <!-- Code Syntax Highlighting -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <script src="/assets/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- Script Used for Randomizing the Projects Order -->
+  <!-- <script type="text/javascript">
+    $.fn.shuffleChildren = function() {
+      $.each(this.get(), function(index, el) {
+        var $el = $(el);
+        var $find = $el.children();
+
+        $find.sort(function() {
+          return 0.5 - Math.random();
+        });
+
+        $el.empty();
+        $find.appendTo($el);
+      });
+    };
+    $("#projects").shuffleChildren();
+  </script> -->
+
+  <!-- Project Cards Layout -->
+  <script type="text/javascript">
+    var $grid = $('#projects');
+
+    // $grid.masonry({ percentPosition: true });
+    // $grid.masonry('layout');
+
+    // Trigger after images load.
+    $grid.imagesLoaded().progress(function() {
+      $grid.masonry({ percentPosition: true });
+      $grid.masonry('layout');
+    });
+  </script>
+
+  <!-- Enable Tooltips -->
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+</body>
+</html>

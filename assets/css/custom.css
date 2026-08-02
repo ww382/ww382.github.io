@@ -20,8 +20,12 @@ body.home-page { display: flex; flex-direction: column; min-height: 100vh; }
 body.home-page .content { flex: 1; display: flex; align-items: center; }
 
 /* Homepage hero: photo beside the intro text and buttons, centered as a
-   unit on the page, collapsing to a single column on narrow screens. */
-.home-hero { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 4rem; }
+   unit on the page. flex-wrap stays "nowrap" here deliberately -- with
+   "wrap", the browser would silently break into two stacked rows (still
+   left-aligned, like desktop) at in-between widths, before the explicit
+   single-column layout below ever kicks in. The two states are switched
+   only by the media query, never by the browser deciding to wrap. */
+.home-hero { display: flex; flex-wrap: nowrap; align-items: flex-start; justify-content: center; gap: 4rem; }
 .home-photo { flex: 0 0 auto; width: 220px; text-align: center; }
 .home-photo .profile-img-big { width: 100%; }
 .home-buttons { margin-top: 1.5rem; display: flex; gap: 0.5rem; justify-content: flex-start; flex-wrap: wrap; }
@@ -29,16 +33,18 @@ body.home-page .content { flex: 1; display: flex; align-items: center; }
 .home-info h5.title { font-size: 1.5rem; }
 .home-info h7 { font-size: 1rem; }
 
-@media (max-width: 575.98px) {
-  .home-hero { flex-direction: column; align-items: center; text-align: center; gap: 2rem; }
+@media (max-width: 767.98px) {
+  .home-hero { flex-direction: column; flex-wrap: wrap; align-items: center; text-align: center; gap: 2rem; }
   .home-info { width: 100%; max-width: 100%; text-align: center; }
   .home-buttons { justify-content: center; }
 }
 
 /* About-me hero: photo + social icons (centered under the photo) beside the
    bio text, both flush with the same left edge as the News section below so
-   everything lines up as one column. */
-.about-hero { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2.5rem; padding-top: 2rem; }
+   everything lines up as one column. flex-wrap stays "nowrap" for the same
+   reason as .home-hero above -- avoids an unstyled in-between stacked state
+   before the media query's single-column layout takes over. */
+.about-hero { display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 2.5rem; padding-top: 2rem; }
 .about-photo { flex: 0 0 auto; width: 220px; text-align: center; }
 .about-photo .profile-img { width: 100%; }
 .about-icons { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1rem; }
@@ -50,8 +56,8 @@ body.home-page .content { flex: 1; display: flex; align-items: center; }
    photo's own edge. */
 .news { padding-left: 52px; }
 
-@media (max-width: 575.98px) {
-  .about-hero { flex-direction: column; align-items: center; text-align: center; padding-top: 1rem; }
+@media (max-width: 767.98px) {
+  .about-hero { flex-direction: column; flex-wrap: wrap; align-items: center; text-align: center; padding-top: 1rem; }
   .about-info { width: 100%; text-align: center; }
   .news { padding-left: 0; }
 }

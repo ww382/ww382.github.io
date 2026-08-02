@@ -1,44 +1,28 @@
-# al-folio
-A simple and clean [Jekyll](https://jekyllrb.com/) theme for academics.
+# ww382.github.io
 
-**al-folio** is based on [\*folio theme](https://github.com/bogoli/-folio).
-The original theme was published by [Lia Bogoev](http://liabogoev.com) and copyrighted under the MIT license.
+Wensi Wu's personal/academic website, hosted on GitHub Pages at
+[ww382.github.io](https://ww382.github.io).
 
-## Getting started
+## Structure
 
-For more about how to use Jekyll, check out [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/).
-Why Jekyll? Read this [blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/)!
+Plain static HTML/CSS/JS (Bootstrap/MDB) — no build step or templating
+engine. A `.nojekyll` file at the repo root tells GitHub Pages to serve the
+files as-is.
 
-### Installation
+- `index.html` — home page
+- `about_me/`, `cv/`, `publications/` — site sections
+- `assets/` — CSS, JS, images, fonts, PDFs
 
-Assuming you have [Ruby](https://www.ruby-lang.org/en/downloads/) and [Bundler](https://bundler.io/) installed on your system (*hint: for ease of managing ruby gems, consider using [rbenv](https://github.com/rbenv/rbenv)*), first fork the theme from `github.com:alshedivat/al-folio` to `github.com:<your-username>/<your-repo-name>` and do the following:
+## Local preview
 
-```bash
-$ git clone git@github.com:<your-username>/<your-repo-name>.git
-$ cd <your-repo-name>
-$ bundle install
-$ bundle exec jekyll serve # Add "--incremental" for faster incremental builds.
-```
-
-Now, feel free to customize the theme however you like (don't forget to change the name!).
-After you are done, you can deploy it to [GitHub Pages](https://pages.github.com/) by running the deploy script:
+Since there's no build step, any static file server works, e.g.:
 
 ```bash
-$ ./bin/deploy
+python3 -m http.server
 ```
 
-## Features
+Then open `http://localhost:8000`.
 
-Emphasis on whitespace, transparency, and academic usage: [theme demo](https://alshedivat.github.io/al-folio/).
+## Deploying
 
-To learn more on how to use Jekyll, you can refer to, e.g., [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/).
-To know *why Jekyll*, you can read this [blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/).
-
-## Contributing
-
-Feel free to contribute new features and theme improvements by sending a pull request.
-Style improvements and bug fixes are especially welcome.
-
-## License
-
-MIT
+Push to `master` — GitHub Pages serves directly from it.

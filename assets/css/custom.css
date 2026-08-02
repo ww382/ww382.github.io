@@ -1,46 +1,10 @@
-/* Site-specific overrides on top of the vendor theme (main.css). Keeping
-   these separate avoids hand-editing the 14k-line vendor bundle. */
-
-/* Safety net: nothing on the page should ever force horizontal scroll on
-   narrow screens, regardless of what any individual element does. */
 html, body { max-width: 100%; overflow-x: hidden; }
 
-/* Vendor theme caps .content/.container-fluid at 800px; widen it so page
-   content isn't stranded in a narrow column on larger screens. */
 .container-fluid, .content { max-width: 1140px; }
-
-/* Vendor rule has a typo ("150 px") that makes it invalid, so this fixes
-   the homepage photo's actual size instead of leaving it unconstrained. */
 .profile-img-big { max-width: 220px; }
-
-/* Homepage: vertically center the hero in the viewport (footer is
-   position:fixed in the vendor theme, so it floats over the bottom rather
-   than taking up flow space). Column direction + justify-content centers
-   vertically on the main axis while leaving align-items at its default
-   (stretch), so .home-hero still stretches to the full content width --
-   using align-items:center here instead would shrink .home-hero to fit its
-   content and left-anchor it, breaking horizontal centering. */
 body.home-page { display: flex; flex-direction: column; min-height: 100vh; }
 body.home-page .content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 
-/* Homepage hero: photo's left edge lines up with the right edge of the
-   "Wensi Wu" brand text in the nav bar, and the text column's right edge
-   lines up with the left edge of the "About me" nav link.
-
-   This needs a formula, not a fixed margin, because of a wrinkle in the
-   vendor markup: Bootstrap's base .navbar class carries its own 1rem
-   (16px) horizontal padding around the nav's .container-fluid, which
-   .content has no equivalent of. Both .container-fluid and .content cap
-   at 1140px and center via margin:auto (line 10), but because of that
-   extra 16px, .container-fluid stops being wide enough to need centering
-   16px sooner than .content does (at viewport 1172px vs 1140px) -- so
-   between those two widths, .content is centering while the nav still
-   isn't, and the resulting mismatch tapers linearly across that 32px
-   band rather than switching cleanly at one breakpoint. The
-   max(0px, (100vw - Xpx)/2) terms reconstruct each box's own centering
-   margin so the difference between them cancels out continuously at
-   every width instead of only at the two ends. Verified by DOM
-   measurement across 1000-1600px, including inside the 1140-1172 band. */
 .home-hero {
   display: flex; flex-wrap: nowrap; align-items: flex-start; justify-content: space-between;
   margin-left: calc(108px + max(0px, (100vw - 1172px) / 2) - max(0px, (100vw - 1140px) / 2));
@@ -48,13 +12,14 @@ body.home-page .content { flex: 1; display: flex; flex-direction: column; justif
 }
 .home-photo { flex: 0 0 auto; width: 220px; text-align: center; }
 .home-photo .profile-img-big { width: 100%; }
-.home-info { flex: 0 1 700px; min-width: 0; }
+.home-info { flex: 0 1 525px; min-width: 0; }
 .home-info h5.title { font-size: 1.65rem; }
 .home-info h7 { font-size: 1.1rem; }
 
-/* Breakpoint is intentionally higher than the ~900-950px point where the
-   department line would start wrapping in two-column mode -- below this,
-   the single-column layout gets the text the full content width instead. */
+@media (max-width: 1171.98px) {
+  .home-hero { margin-left: 108px; margin-right: 154px; }
+}
+
 @media (max-width: 991.98px) {
   .home-hero { flex-direction: column; flex-wrap: wrap; align-items: center; text-align: center; gap: 2rem; margin-left: 0; margin-right: 0; }
   .home-info { width: 100%; max-width: 100%; text-align: center; }
@@ -62,21 +27,12 @@ body.home-page .content { flex: 1; display: flex; flex-direction: column; justif
   .home-info h5.title { text-align: center !important; }
 }
 
-/* About-me hero: photo + social icons (centered under the photo) beside the
-   bio text, both flush with the same left edge as the News section below so
-   everything lines up as one column. flex-wrap stays "nowrap" for the same
-   reason as .home-hero above -- avoids an unstyled in-between stacked state
-   before the media query's single-column layout takes over. */
 .about-hero { display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 2.5rem; padding-top: 2rem; }
 .about-photo { flex: 0 0 auto; width: 220px; text-align: center; }
 .about-photo .profile-img { width: 100%; }
 .about-icons { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1rem; }
 .about-info { flex: 1 1 380px; min-width: 0; padding-top: 1rem; }
 
-/* Icons are centered under the 220px photo (not flush with its left edge),
-   so the News section below is nudged to match the icon row's actual left
-   edge (measured: 52px in from the photo's left edge) rather than the
-   photo's own edge. */
 .news { padding-left: 52px; }
 
 @media (max-width: 767.98px) {
